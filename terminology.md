@@ -43,5 +43,11 @@ Whether to use amortized complexity.
 ## Average Case
 In algorithm analysis, specifically complexity of an algorithm, the average of the costs for all problem instances of a given input size n. If not all problem instances have equal probability of occurring, then the average case must be calculated using a weighted average that is specified with the problem (for example, every input may be equally likely). Every input size n has its own average case. We never consider the average case as removed from input size.
 
+## Basic operation
+A basic operation must have the property that its time to complete does not depend on the particular values of its operands. Adding or comparing two integer variables are examples of basic operations in most programming languages.
+
 ## Call Stack
 Known also as execution stack. A stack that stores the function call sequence and the return address for each function.
+
+## Size
+Size is often the number of inputs processed. For example, when comparing sorting algorithms the size of the problem is typically measured by the number of records to be sorted.
