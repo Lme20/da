@@ -1,11 +1,11 @@
-## Minimum-heap
+# Minimum-heap
 
+## Operations:
 ### Deletion
-
 ### Insertion
 
-## Maximum-heap
+# Maximum-heap
 
+## Operations: 
 ### Deletion
-
 ### Insertion
