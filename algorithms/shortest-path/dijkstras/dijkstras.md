@@ -23,12 +23,21 @@
 5. Choose new current node from unvisited nodes with minimal distance
     - Repeat steps 3 to 5 until all nodes have been visited or the smallest tentative distance among the unvisited nodes is infinity (which means they are not reachable from the starting node).
 
+### Calculating values
+
+When calculating the properties of vertices (nodes) in a graph, you should account for the following:
+
+- d[v]: Represents the shortest known distance from the start node to a vertex v. This is what is set as infinity for all vertices except for the starting node, which is set as 0.
+
+- π[v]: Represents the predecessor of a vertex V on the shortest path from the start node to V. 
+
 ## Pseudocode
 
 ## Implementation
 
 
 ## Time Complexity
+Θ((|V|+|E|)log|E|)
 
 ## Space Complexity
 
