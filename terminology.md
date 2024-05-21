@@ -51,3 +51,6 @@ Known also as execution stack. A stack that stores the function call sequence an
 
 ## Size
 Size is often the number of inputs processed. For example, when comparing sorting algorithms the size of the problem is typically measured by the number of records to be sorted.
+
+## Height
+The number of nodes on the longest path from the root to the leaf.
