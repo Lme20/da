@@ -17,6 +17,7 @@ target (int): The value to search for
 
 Returns:
 int: The index of the target if found, otherwise -1
+always returns -1 if the target is not found in the array!
 """
 
 def binary_search(array, target):
