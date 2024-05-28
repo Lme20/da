@@ -4,6 +4,8 @@
 
 *Breadth-first search (BFS) is more commonly used for unweighted graphs*
 
+Goal: To find the shortest path from a source vertex to all other vertices in a graph
+
 ## Steps
 
 1. Mark all nodes as unvisited
