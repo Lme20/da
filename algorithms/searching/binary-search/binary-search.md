@@ -4,7 +4,7 @@
 
 *Repeatedly divides the search space in half until the target value is found*
 
-*Coomonly used in sorted arrays or sorted lists*
+*Commonly used in sorted arrays or sorted lists*
 
 *You should count the index not the value of the elements!*
 
