@@ -35,6 +35,117 @@ To estimate an algorithm's performance:
 
 ### Big-O Notation
 
+**1. RULES**
+
+*Constant time operations O(1)*
+
+- basic arithmetic operations (e.g., a + b)
+- assigning values (e.g., x = 10)
+- accessing elements by index (e.g., array[i])
+
+Example: sum = a + b, array[i] = 5.
+
+---
+*Linear time operations O(N)*
+- Operations that iterate over a lits of elements or list once
+
+Example: For-loop iterating over N elements
+
+* QUADRATIC TIME OPERATIONS O(N^2):
+    - Nested for-loops where each loop runs 'n' times
+    Example: Bubble sort, insertion sort, selection sort
+
+* CUBIC/POLYNOMIAL TIME OPERATIONS O(n^3)/O(n^k):
+    - 3 or more nested for-loops
+
+---
+*Logarithmic time operations O(log N)*
+    - Divide and conquer algorithms, binary search, operations in balanced binary search trees 
+    (e.g. AVL, red-black trees)
+    Example: Binary search in a sorted array
+
+---
+*Linearithmic time operations O(N log N)*
+    - Sorting algorithms like heapsort, mergesort
+    Example: sorting an array using merge sort
+
+---
+*Exponential time operations O(2^N)*
+    - Algorithms where all subsets or combinations are explored
+    Example: Recursive algorithms
+
+---
+*Factorial time operations O(N!)*
+    - Algorithms that generate permutations of a set
+    Example: Brute-force algorithms
+
+---
+*Applied rates of growth (Heuristics)*
+
+Single loops: usually results in O(N)
+
+Nested loops: Where each loop runs '𝑛' times results in O(n2), O(n3), etc (count the number of nested loops)
+
+Logarithmic loops: Where a problem size is divided in each iteration results in O(log N)
+
+    while n > 1:
+        n = n / 2
+        # O(1) operation
+
+Different loop bounds: Their complexities should be added, not for nested loops
+
+    for i in range(n):  # O(n)
+        # O(1) operation
+    for j in range(m):  # O(m)
+        # O(1) operation
+    # Total: O(n) + O(m)
+
+
+Non-uniform operations: Operations with different complexities based on certain conditions. Usually, you should only consider the worst-case. 
+
+    for i in range(n):
+        if i % 2 == 0:
+            # O(1) operation
+        else:
+            # O(log n) operation
+    # Total: O(n * log n) because we consider the worst-case
+
+Conditionals (if-else statements): Depends on the complexity of the operations within them, Usually, you should only consider the branch with the worst-case. 
+
+    if condition:
+        # O(n) operation
+    else:
+        # O(log n) operation
+    # Total: O(n) because it's the dominant term
+
+
+Divide-and-conquer: usually algorithms with O(log N) or O(N log N) complexities
+
+Operations on Data structures: 
+* Array/list access: O(1) for accessing elements in index
+* Linked list operations: O(N) for search, O(1) for insertion/deletion
+* BST: O(log N) for all BST operations
+* Hash tables: O(1) for all operations, O(N) for worst-case
+
+Combining complexities: 
+
+* independent operations: add their complexities
+
+    ```
+    for i in range(n):  # O(n)
+        # O(1) operation
+    for j in range(n):  # O(n)
+        # O(1) operation
+    # Total: O(n) + O(n) = O(n)
+
+* nested operations: multiply their complexities
+
+    ```
+    for i in range(n):    # O(n)
+        for j in range(n):  # O(n)
+            # O(1) operation
+    # Total: O(n) * O(n) = O(n^2)
+
 ## Asymptotic Complexity
 
 ### Algorithmic behaviours and time complexity
