@@ -20,20 +20,33 @@ What can DFS do?
 - Find articulating paths in a flow network
 - Generate mazes
 
+## DIRECTED DEPTH-FIRST-SEARCH
+- Follows only the direction of edges (from a source node to a destination node).
+- processes each edge once
+
+## UNDIRECTED DEPTH-FIRST-SEARCH
+- Can traverse back and forth along any edge.
+- processes each edge from both directions
+
 ## STEPS
 
 1. Start at node 0 (can start at any node)
-2. Pick any available node from node 0
+2. Pick any available node from node 0 (follow the alphabetical/numerical order if any)
     - If node has been visited, backtrack (go back to a previously visited node where new unvisited nodes can be visited)
     - If node is new, continue
 
 3. Continue until reaching node with dead end, if dead end, backtrack
 4. DFS ends when all reachable nodes from the initial node have been visited. 
 
-## OPERATIONS
+## OPERATIONS - COMPLEXITY
 
+Initialization: O(1)
+Traversal: O(V+E), where V is the number of vertices and E is the number of edges.
+Marking nodes: O(1)
+Processing nodes: O(1)
+Backtracking: O(1)
 
-## COMPLEXITY
+Overall complexity O(V+E)
 
 ## PSEUDOCODE
 Does not include pseudocode for finding connected components. 
