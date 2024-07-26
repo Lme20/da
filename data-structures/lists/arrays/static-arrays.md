@@ -1,4 +1,4 @@
-# ARRAYS
+# STATIC ARRAYS
 
 - Fixed in size
 - Can't have mixed types
@@ -8,16 +8,13 @@
 
 
 ## OPERATIONS
-
 ### ACCESSING
-
 Example: array[i] gives you the element at index 'i'.
 
 Time complexity:
 - Accessing an element by index: O(1)
 
 ### INSERTION
-
 Inserting at the beginning or middle requires shifting elements to the right. 
 
 Time complexity:
@@ -25,7 +22,6 @@ Time complexity:
 - Insertion at the beginning or middle: O(n)
 
 ### DELETION
-
 Time complexity:
 - Deletion at the end: O(1)
 - Deletion at the beginning or middle: O(n)

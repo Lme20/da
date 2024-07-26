@@ -1,13 +1,12 @@
 # BINARY SEARCH - Find a target value in a sorted array
 
-*Used to find a specific value in a sorted sequence*
-
-*Repeatedly divides the search space in half until the target value is found*
-
-*Commonly used in sorted arrays or sorted lists*
-
-*You should count the index not the value of the elements!*
-
+- Used to find a specific value in a sorted sequence
+- Repeatedly divides the search space in half until the target value is found
+- Works only on sorted arrays or sorted lists
+- You should count the index not the value of the elements!
+- random access of elements
+- With each iteration, half of the values are eliminated
+- Commonly used in arrays
 
 
 ## Steps
@@ -26,13 +25,13 @@ If the middle element is equal to the target value, return its index.
 If the middle element is greater than the target value, repeat the process on the left half of the sequence.
 If the middle element is less than the target value, repeat the process on the right half of the sequence.
 
-*NOTE: UPDATE middle element all the time! if search left then -1, if search right then +1*
+*NOTE: UPDATE middle element all the time! if search left then update left to mid - 1, if search right then update right to mid + 1*
 Step 4:
 - Continue dividing the search space in half until the target value is found or the search space is empty.
 
 ### Calculating values
 
-Middle index is calculated using the formula: `mid = (low + high) / 2`, where `low` and `high` represent the indices of the current search space.
+Middle index is calculated using the formula: `mid = left + (right - left) / 2`, where `left` and `right` represent the indices of the current search space.
 
 ## Pseudocode
 
