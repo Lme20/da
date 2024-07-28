@@ -6,6 +6,8 @@
 - Suitable for applications where fast element retrieval is required
 - Space complexity: O(n)
 
+## STEPS
+1.
 
 ## OPERATIONS
 ### ACCESSING
