@@ -15,8 +15,8 @@ Step 1:
 - Start with the entire sorted sequence.
 
 Step 2:
-- Calculate the middle index of the current search space. (not the elemenet value!)
-left + right % 2
+- Calculate the middle index of the current search space to place the pivot. (not the elemenet value!)
+pivot = (left + right) / 2
 
 Step 3:
 - Compare the middle element with the target value.
@@ -39,6 +39,11 @@ Middle index is calculated using the formula: `mid = left + (right - left) / 2`,
 ## Asymptotic complexity: 
 
 - Time complexity:
+
+best case: O(1)
+average case: O(log N)
+worst case: O(log N)
+
 O(log n) worst-case where n is the size of the sorted sequence.
 
 - Space complexity: 
