@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Dijktra's algorithm - Find the shortest path - My Docs</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../../../css/custom.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../../docs/index.md" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Abstract Data Types</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/docs/abstract-data-types/ADT.md" class="dropdown-item">ADT</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/abstract-data-types/graph.md" class="dropdown-item">Graph</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/abstract-data-types/list.md" class="dropdown-item">List</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/abstract-data-types/map.md" class="dropdown-item">Map</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/abstract-data-types/priority-queues.md" class="dropdown-item">Priority Queues</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/abstract-data-types/queue.md" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/abstract-data-types/set.md" class="dropdown-item">Set</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/abstract-data-types/stack.md" class="dropdown-item">Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Algorithm Analysis</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../docs/algorithm-analysis/algorithm_analysis.md" class="dropdown-item">Algorithm Analysis</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Algorithms</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Dynamic Programming</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../docs/algorithms/dynamic/optimal-bst.md" class="dropdown-item">Optimal BST</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Graph Traversal</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../docs/algorithms/graph-traversal/bfs/breadth-first-search.md" class="dropdown-item">BFS</a>
+</li>
+            
+<li>
+    <a href="../../../../docs/algorithms/graph-traversal/dfs/depth-first-search.md" class="dropdown-item">DFS</a>
+</li>
+            
+<li>
+    <a href="../../../../docs/algorithms/graph-traversal/ucs/uniform-cost-search.md" class="dropdown-item">UCS</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Minimum Spanning Tree</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../docs/algorithms/min-spanning-tree/kruskals/kruskals.md" class="dropdown-item">Kruskal's</a>
+</li>
+            
+<li>
+    <a href="../../../../docs/algorithms/min-spanning-tree/prims/prims.md" class="dropdown-item">Prim's</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Searching</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../docs/algorithms/searching/binary-search/binary-search.md" class="dropdown-item">Binary Search</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Shortest Path</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../docs/algorithms/shortest-path/shortest-path.md" class="dropdown-item">Shortest Path Algorithm</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Sorting</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../docs/algorithms/sorting/sorting.md" class="dropdown-item">Sorting Algorithms</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data Structures</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../docs/data-structures/graphs/graphs.md" class="dropdown-item">Graphs</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Hash Tables</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../docs/data-structures/hash-tables/hashing.md" class="dropdown-item">Hashing</a>
+</li>
+            
+<li>
+    <a href="../../../../docs/data-structures/hash-tables/linear-probing.md" class="dropdown-item">Linear Probing</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../../docs/data-structures/lists/lists.md" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/data-structures/priority-queues/priority-queues.md" class="dropdown-item">Priority Queues</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/data-structures/search-trees/search-trees.md" class="dropdown-item">Search Trees</a>
+</li>
+                                    
+<li>
+    <a href="../../../../docs/data-structures/stacks/stacks.md" class="dropdown-item">Stacks</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../docs/terminology.md" class="nav-link">Terminology</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#dijktras-algorithm-find-the-shortest-path" class="nav-link">Dijktra's algorithm - Find the shortest path</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#steps" class="nav-link">Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#pseudocode" class="nav-link">Pseudocode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#time-complexity" class="nav-link">Time Complexity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#space-complexity" class="nav-link">Space Complexity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="dijktras-algorithm-find-the-shortest-path">Dijktra's algorithm - Find the shortest path</h1>
+<p><em>Examples given in a weighted graph</em></p>
+<p><em>Breadth-first search (BFS) is more commonly used for unweighted graphs</em></p>
+<p>Goal: To find the shortest path from a source vertex to all other vertices in a graph</p>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>
+<p>Mark all nodes as unvisited</p>
+</li>
+<li>
+<p>Assign all nodes a tentative distance value</p>
+<ul>
+<li>Starting node has the shortest path of 0</li>
+<li>Assign a tentative distance of infinity to all other nodes, </li>
+</ul>
+</li>
+<li>
+<p>For the current node calculate the distance to all unvisited neighbors</p>
+<ul>
+<li>For the current node, consider all its unvisited neighbors and calculate their tentative distances through the current node.</li>
+<li>Compare the newly calculated tentative distance to the current assigned value for each neighbor, and update it if the new value is less. </li>
+</ul>
+</li>
+<li>
+<p>Mark current node as visited</p>
+<ul>
+<li>Add the current node to the set of visited nodes.</li>
+<li>Remove it from the unvisited set.</li>
+</ul>
+</li>
+<li>
+<p>Choose new current node from unvisited nodes with minimal distance</p>
+<ul>
+<li>Repeat steps 3 to 5 until all nodes have been visited or the smallest tentative distance among the unvisited nodes is infinity (which means they are not reachable from the starting node).</li>
+</ul>
+</li>
+</ol>
+<h3 id="calculating-values">Calculating values</h3>
+<p>When calculating the properties of vertices (nodes) in a graph, you should account for the following:</p>
+<ul>
+<li>
+<p>d[v]: Represents the shortest known distance from the start node to a vertex v. This is what is set as infinity for all vertices except for the starting node, which is set as 0.</p>
+</li>
+<li>
+<p>π[v]: Represents the predecessor of a vertex V on the shortest path from the start node to V. </p>
+</li>
+</ul>
+<h2 id="pseudocode">Pseudocode</h2>
+<h2 id="implementation">Implementation</h2>
+<h2 id="time-complexity">Time Complexity</h2>
+<p>Θ((|V|+|E|)log|E|)</p>
+<h2 id="space-complexity">Space Complexity</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../js/custom.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

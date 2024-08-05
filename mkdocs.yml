@@ -1,0 +1,51 @@
+site_name: MyDSA
+docs_dir: docs
+
+theme:
+  name: dracula
+
+nav:
+  - Home: index.md
+  - Abstract Data Types:
+    - ADT: abstract-data-types/ADT.md
+    - Graph: abstract-data-types/graph.md
+    - List: abstract-data-types/list.md
+    - Map: abstract-data-types/map.md
+    - Priority Queues: abstract-data-types/priority-queues.md
+    - Queue: abstract-data-types/queue.md
+    - Set: abstract-data-types/set.md
+    - Stack: abstract-data-types/stack.md
+  - Algorithm Analysis: algorithm-analysis/algorithm_analysis.md
+  - Algorithms:
+    - Dynamic Programming:
+      - Optimal BST: algorithms/dynamic/optimal-bst.md
+    - Graph Traversal:
+      - BFS: algorithms/graph-traversal/bfs/breadth-first-search.md
+      - DFS: algorithms/graph-traversal/dfs/depth-first-search.md
+      - UCS: algorithms/graph-traversal/ucs/uniform-cost-search.md
+    - Minimum Spanning Tree:
+      - Kruskal's: algorithms/min-spanning-tree/kruskals/kruskals.md
+      - Prim's: algorithms/min-spanning-tree/prims/prims.md
+    - Searching:
+      - Binary Search: algorithms/searching/binary-search/binary-search.md
+    - Shortest Path:
+      - Shortest Path Algorithm: algorithms/shortest-path/shortest-path.md
+    - Sorting:
+      - Sorting Algorithms: algorithms/sorting/sorting.md
+  - Data Structures:
+    - Graphs: data-structures/graphs/graphs.md
+    - Hash Tables:
+      - Hashing: data-structures/hash-tables/hashing.md
+      - Linear Probing: data-structures/hash-tables/linear-probing.md
+    - Lists: data-structures/lists/lists.md
+    - Priority Queues: data-structures/priority-queues/priority-queues.md
+    - Search Trees: data-structures/search-trees/search-trees.md
+    - Stacks: data-structures/stacks/stacks.md
+  - Terminology: terminology.md
+
+# If you have assets with absolute links, make sure to use relative paths
+extra_css:
+  - css/custom.css
+
+extra_javascript:
+  - js/custom.js
