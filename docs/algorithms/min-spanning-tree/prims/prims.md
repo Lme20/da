@@ -5,6 +5,7 @@
 *can Also be used with a priority queue*
 
 GOAL: find the Minimum Spanning Tree (MST) of a graph.
+- Example of a greedy algorithm
 
 ## Steps
 
