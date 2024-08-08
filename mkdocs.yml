@@ -38,7 +38,7 @@ nav:
       - Hashing: data-structures/hash-tables/hashing.md
       - Linear Probing: data-structures/hash-tables/linear-probing.md
     - Lists: data-structures/lists/lists.md
-    - Priority Queues: data-structures/priority-queues/priority-queues.md
+    - Priority Queues: data-structures/priority-queues/binary-heaps.md
     - Search Trees: data-structures/search-trees/search-trees.md
     - Stacks: data-structures/stacks/stacks.md
   - Terminology: terminology.md
