@@ -1,347 +1,515 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-    <head>
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>UCS - MyDSA</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         
         
         
-        <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Uniform-Cost search (UCS) - Find the shortest path - My Docs</title>
-        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
-        <link href="../../../../css/brands.min.css" rel="stylesheet">
-        <link href="../../../../css/solid.min.css" rel="stylesheet">
-        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
-        <link href="../../../../css/base.css" rel="stylesheet">
-        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
-        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
-        <link href="../../../../css/custom.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../../../..">My Docs</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../../assets/css/darcula-highlight.min.css">
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item">
-                                <a href="../../../../docs/index.md" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Abstract Data Types</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="/docs/abstract-data-types/ADT.md" class="dropdown-item">ADT</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/abstract-data-types/graph.md" class="dropdown-item">Graph</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/abstract-data-types/list.md" class="dropdown-item">List</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/abstract-data-types/map.md" class="dropdown-item">Map</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/abstract-data-types/priority-queues.md" class="dropdown-item">Priority Queues</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/abstract-data-types/queue.md" class="dropdown-item">Queue</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/abstract-data-types/set.md" class="dropdown-item">Set</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/abstract-data-types/stack.md" class="dropdown-item">Stack</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Algorithm Analysis</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../../docs/algorithm-analysis/algorithm_analysis.md" class="dropdown-item">Algorithm Analysis</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Algorithms</a>
-                                <ul class="dropdown-menu">
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Dynamic Programming</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../../docs/algorithms/dynamic/optimal-bst.md" class="dropdown-item">Optimal BST</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Graph Traversal</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../../docs/algorithms/graph-traversal/bfs/breadth-first-search.md" class="dropdown-item">BFS</a>
-</li>
-            
-<li>
-    <a href="../../../../docs/algorithms/graph-traversal/dfs/depth-first-search.md" class="dropdown-item">DFS</a>
-</li>
-            
-<li>
-    <a href="../../../../docs/algorithms/graph-traversal/ucs/uniform-cost-search.md" class="dropdown-item">UCS</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Minimum Spanning Tree</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../../docs/algorithms/min-spanning-tree/kruskals/kruskals.md" class="dropdown-item">Kruskal's</a>
-</li>
-            
-<li>
-    <a href="../../../../docs/algorithms/min-spanning-tree/prims/prims.md" class="dropdown-item">Prim's</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Searching</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../../docs/algorithms/searching/binary-search/binary-search.md" class="dropdown-item">Binary Search</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Shortest Path</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../../docs/algorithms/shortest-path/shortest-path.md" class="dropdown-item">Shortest Path Algorithm</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Sorting</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../../docs/algorithms/sorting/sorting.md" class="dropdown-item">Sorting Algorithms</a>
-</li>
-    </ul>
-  </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data Structures</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../../docs/data-structures/graphs/graphs.md" class="dropdown-item">Graphs</a>
-</li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Hash Tables</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../../docs/data-structures/hash-tables/hashing.md" class="dropdown-item">Hashing</a>
-</li>
-            
-<li>
-    <a href="../../../../docs/data-structures/hash-tables/linear-probing.md" class="dropdown-item">Linear Probing</a>
-</li>
-    </ul>
-  </li>
-                                    
-<li>
-    <a href="../../../../docs/data-structures/lists/lists.md" class="dropdown-item">Lists</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/data-structures/priority-queues/priority-queues.md" class="dropdown-item">Priority Queues</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/data-structures/search-trees/search-trees.md" class="dropdown-item">Search Trees</a>
-</li>
-                                    
-<li>
-    <a href="../../../../docs/data-structures/stacks/stacks.md" class="dropdown-item">Stacks</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../../../docs/terminology.md" class="nav-link">Terminology</a>
-                            </li>
-                        </ul>
+        <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../../assets/css/mkdocs.min.css">
+            <link href="../../../../css/custom.css" rel="stylesheet">
 
-                    <ul class="nav navbar-nav ms-md-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
+            <link  rel="icon" type="image/x-icon" href="../../../../assets/img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
 
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
         </button>
     </div>
 
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
-        <ul class="nav flex-column">
+    <div class="p-4">
+        
+
+        <div class="drac-text-center">
             
-            <li class="nav-item" data-bs-level="1"><a href="#uniform-cost-search-ucs-find-the-shortest-path" class="nav-link">Uniform-Cost search (UCS) - Find the shortest path</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#steps" class="nav-link">Steps</a>
-              <ul class="nav flex-column">
-              </ul>
+                <span class="drac-text drac-line-height drac-text-white">MyDSA</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#pseudocode" class="nav-link">Pseudocode</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="drac-box">
+                <a href="../../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#abstract-data-types-collapse" aria-expanded="false">
+                    Abstract Data Types
+                </a>
+                <div class="collapse" id="abstract-data-types-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/ADT/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            ADT
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/graph/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Graph
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/list/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            List
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/map/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Map
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/priority-queues/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Priority Queues
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/queue/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Queue
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/set/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Set
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../abstract-data-types/stack/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Stack
+        </a>
+    </li>
+                    </ul>
+                </div>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#implementation" class="nav-link">Implementation</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="drac-box">
+                <a href="../../../../algorithm-analysis/algorithm_analysis/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Algorithm Analysis
+                </a>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#time-complexity" class="nav-link">Time Complexity</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="drac-box">
+                <a href="../../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#algorithms-collapse" aria-expanded="false">
+                    Algorithms
+                </a>
+                <div class="collapse" id="algorithms-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#dynamic-programming-collapse" aria-expanded="false">
+            Dynamic Programming
+        </a>
+
+        <div class="collapse" id="dynamic-programming-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../dynamic/optimal-bst/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Optimal BST
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#graph-traversal-collapse" aria-expanded="false">
+            Graph Traversal
+        </a>
+
+        <div class="collapse" id="graph-traversal-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../bfs/breadth-first-search/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            BFS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../dfs/depth-first-search/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            DFS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            UCS
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#minimum-spanning-tree-collapse" aria-expanded="false">
+            Minimum Spanning Tree
+        </a>
+
+        <div class="collapse" id="minimum-spanning-tree-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../min-spanning-tree/kruskals/kruskals/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Kruskal's
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../min-spanning-tree/prims/prims/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Prim's
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#searching-collapse" aria-expanded="false">
+            Searching
+        </a>
+
+        <div class="collapse" id="searching-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../searching/binary-search/binary-search/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Binary Search
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#shortest-path-collapse" aria-expanded="false">
+            Shortest Path
+        </a>
+
+        <div class="collapse" id="shortest-path-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../shortest-path/shortest-path.md"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Shortest Path Algorithm
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#sorting-collapse" aria-expanded="false">
+            Sorting
+        </a>
+
+        <div class="collapse" id="sorting-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../sorting/sorting.md"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Sorting Algorithms
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#space-complexity" class="nav-link">Space Complexity</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="drac-box">
+                <a href="../../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#data-structures-collapse" aria-expanded="false">
+                    Data Structures
+                </a>
+                <div class="collapse" id="data-structures-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../data-structures/graphs/graphs/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Graphs
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#hash-tables-collapse" aria-expanded="false">
+            Hash Tables
+        </a>
+
+        <div class="collapse" id="hash-tables-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../../data-structures/hash-tables/hashing/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Hashing
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../../data-structures/hash-tables/linear-probing/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Linear Probing
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../data-structures/lists/lists.md"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Lists
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../data-structures/priority-queues/binary-heaps/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Priority Queues
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../data-structures/search-trees/search-trees.md"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Search Trees
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../../data-structures/stacks/stacks/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Stacks
+        </a>
+    </li>
+                    </ul>
+                </div>
             </li>
-              </ul>
+            <li class="drac-box">
+                <a href="../../../../terminology/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Terminology
+                </a>
             </li>
         </ul>
+        <!-- endblock -->
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+</nav>
+        <!-- endblock -->
 
-<h1 id="uniform-cost-search-ucs-find-the-shortest-path">Uniform-Cost search (UCS) - Find the shortest path</h1>
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../../dfs/depth-first-search/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../../../min-spanning-tree/kruskals/kruskals/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="uniform-cost-search-ucs-find-the-shortest-path">Uniform-Cost search (UCS) - Find the shortest path</h1>
 <p><em>UCS is a variant of Dijkstra's algorithm</em></p>
 <h2 id="steps">Steps</h2>
 <h3 id="calculating-values">Calculating values</h3>
 <h2 id="pseudocode">Pseudocode</h2>
 <h2 id="implementation">Implementation</h2>
 <h2 id="time-complexity">Time Complexity</h2>
-<h2 id="space-complexity">Space Complexity</h2></div>
-            </div>
-        </div>
+<h2 id="space-complexity">Space Complexity</h2></p>
+    </article>
+</section>
+            <!-- endblock -->
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../../../../js/bootstrap.bundle.min.js"></script>
-        <script>
-            var base_url = "../../../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../../../js/base.js"></script>
-        <script src="../../../../js/custom.js"></script>
-        <script src="../../../../search/main.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+</footer>
+            <!-- endblock -->
         </div>
-    </div>
-</div>
 
-    </body>
+    </main>
+
+        <script>var base_url = '../../../..';</script>
+        <script src="../../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../../assets/js/mkdocs.js"></script>
+			<script src="../../../../js/custom.js" defer></script>
+			<script src="../../../../search/main.js" defer></script>
+
+</body>
+
 </html>
