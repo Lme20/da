@@ -20,7 +20,9 @@
 
 NOTE: Visually, the pointer moves sequentally as comparisons and swaps are performed (from left to right). 
 
-![Insertion Sort](../assets/insertion-sort.png)
+![Insertion Sort](../../../../assets/insertion-sort.png)
+
+
 
 ## Pseudocode
 

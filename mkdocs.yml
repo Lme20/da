@@ -31,7 +31,8 @@ nav:
     - Shortest Path:
       - Shortest Path Algorithm: algorithms/shortest-path/shortest-path.md
     - Sorting:
-      - Sorting Algorithms: algorithms/sorting/sorting.md
+      - Selection Sort: algorithms/sorting/selection-sort/selection-sort.md
+      - Insertion Sort: algorithms/sorting/insertion-sort/insertion-sort.md
   - Data Structures:
     - Graphs: data-structures/graphs/graphs.md
     - Hash Tables:

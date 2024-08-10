@@ -306,10 +306,18 @@
             <ul class="mb-5 drac-list drac-list-none">
                     
     <li class="drac-box-ternary">
-        <a href="../../../algorithms/sorting/sorting.md"
+        <a href="../../../algorithms/sorting/selection-sort/selection-sort/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
-            Sorting Algorithms
+            Selection Sort
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../algorithms/sorting/insertion-sort/insertion-sort/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Insertion Sort
         </a>
     </li>
             </ul>
@@ -477,7 +485,20 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><p><img alt="Binary Heaps" src="../assets/binary-heaps.png" /></p>
+        <p><p><img alt="Binary Heaps" src="../../../assets/binary-heaps.png" /></p>
+<p>NOTE: 
+- Heaps must always maintain the shape of a complete binary tree. 
+- Each call to add will take Θ(log n) time in the worst case.
+- The height of a heap with n nodes is ⌈logn + 1⌉. 
+- Commonly used in Priority Queues and Heap sort. (Min-heaps for PQ &amp; Max-heaps for Heap sort)
+- The root node of a heap is typically at index 1. </p>
+<p>Height of heap: O(log N)</p>
+<p>Min/Max Heapify: Used during deletion, operation to restore the heap property after replacing the root with the last element. Operation starts at the root and compares current node with its children, swapping with the smaller/larger child if necessary, and continues this process down the heap.</p>
+<p>Bubble-up: Used during insertion. compares the new element with its parent and swaps if necessary, moving up the heap until the property is restored.</p>
+<p>Calculate positions:
+- Get Node's left child: [left(i) = 2<em>i]
+- Get node's right child: [right(i) = 2</em>i + 1]
+- Get node's parent: [floor (i/2)]</p>
 <h1 id="minimum-heap">Minimum-heap</h1>
 <ul>
 <li>the value of each node is smaller than or equal to the values of its children.</li>
@@ -490,22 +511,41 @@ O(log n) where n is the number of elements in the heap. </p>
 <p>To delete the minimum element from a minimum-heap, <em>extracting the minimum</em>, we follow these steps:
 1. Replace the root node with the last node in the heap.
 2. Compare the new root with its children and swap it with the smaller child if necessary.
-3. Repeat step 2 until the heap property is restored.</p>
+3. Repeat step 2 until the heap property is restored. (Min-Heapify operation)</p>
+<p>The cost of removing the minimum element is Θ(logn) in the average and worst cases.</p>
 <h3 id="insertion">Insertion</h3>
 <p>To insert a new element into a minimum-heap, we follow these steps:
 1. Add the new element as the last node in the heap.
 2. Compare the new element with its parent and swap them if necessary to maintain the heap property.
-3. Repeat step 2 until the heap property is restored.</p>
+3. Repeat step 2 until the heap property is restored. Continue the bubble-up process up the heap.</p>
+<h3 id="build-heap">Build-Heap</h3>
+<p>To build a minimum-heap from an unordered array, we follow these steps:
+1. Start from the last non-leaf node and apply the heapify operation to each node up to the root.
+2. This ensures that all subtrees satisfy the heap property, resulting in a complete heap.</p>
 <h1 id="maximum-heap">Maximum-heap</h1>
 <ul>
 <li>The value of each node is greater than or equal to the values of its children.</li>
 <li>the maximum element is always at the root of the heap.</li>
 </ul>
+<p>worst-case time complexity for insertion and deletion:
+O(log n) where n is the number of elements in the heap. </p>
 <h2 id="operations_1">Operations:</h2>
 <h3 id="deletion_1">Deletion</h3>
-<p>To delete the maximum element from a maximum-heap, <em>extracting the maximum</em>, we follow similar steps as in the deletion operation for a minimum-heap. However, instead of swapping with the smaller child, we swap with the larger child.</p>
+<p>To delete the maximum element from a maximum-heap, <em>extracting the maximum</em>, we follow similar steps as in the deletion operation for a minimum-heap. However, instead of swapping with the smaller child (at the root), we swap with the larger child. Complete the operation with Max-heapify.</p>
+<ol>
+<li>Replace the root node with the last node in the heap.</li>
+<li>Compare the new root with its children and swap it with the larger child if necessary.</li>
+<li>Repeat step 2 until the heap property is restored. (Max-Heapify operation)</li>
+</ol>
+<p>The cost of removing the maximum element is Θ(logn) in the average and worst cases.</p>
 <h3 id="insertion_1">Insertion</h3>
-<p>To insert a new element into a maximum-heap, we follow similar steps as in the insertion operation for a minimum-heap. However, instead of comparing with the parent and swapping if necessary, we compare with the parent and swap if the new element is greater than the parent.</p></p>
+<p>To insert a new element into a maximum-heap, we follow similar steps as in the insertion operation for a minimum-heap. However, instead of comparing with the parent and swapping if necessary, we compare with the parent and swap if the new element is greater than the parent. Continue the bubble-up process up the heap.</p>
+<h3 id="build-heap_1">Build-Heap</h3>
+<p>To build a maximum-heap from an unordered array, we follow these steps:
+1. Start from the last non-leaf node and apply the heapify operation to each node up to the root.
+2. This ensures that all subtrees satisfy the heap property, resulting in a complete heap.</p>
+<p>Note: The build-heap operation processes nodes in reverse level order, starting from the bottom-most level to the top-most level, and from right to left within each level.</p>
+<p>The cost of build heap is the sum of the costs for the calls to siftDown. Each siftDown operation can cost at most the number of levels it takes for the node being sifted to reach the bottom of the tree.</p></p>
     </article>
 </section>
             <!-- endblock -->

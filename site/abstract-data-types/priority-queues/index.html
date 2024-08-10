@@ -306,10 +306,18 @@
             <ul class="mb-5 drac-list drac-list-none">
                     
     <li class="drac-box-ternary">
-        <a href="../../algorithms/sorting/sorting.md"
+        <a href="../../algorithms/sorting/selection-sort/selection-sort/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
-            Sorting Algorithms
+            Selection Sort
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../algorithms/sorting/insertion-sort/insertion-sort/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Insertion Sort
         </a>
     </li>
             </ul>
@@ -478,16 +486,32 @@
                 <section class="p-md-5 section-content">
     <article>
         <p><h1 id="priority-queues">Priority Queues</h1>
-<p>A priority queue is an ADTs. It operates by:</p>
+<p>A priority queue is an ADTs. Similar to queues, it operates by:</p>
 <ol>
 <li><em>Adding elements with a priority:</em> Each element in the priority queue is associated with a priority. The priority can be any comparable value such as an integer or float.</li>
-<li><em>Removing elements with highest priority first:</em> When removing elements from a priority queue, the element with the highest prioriy gets removed first. If two elements have the same priority, the order of removal can be based on their order of insertion or other criterion. </li>
+<li>
+<p><em>Removing elements with highest priority first:</em> When removing elements from a priority queue, the element with the highest prioriy gets removed first. If two elements have the same priority, the order of removal can be based on their order of insertion or other criterion. </p>
+</li>
+<li>
+<p>Only supports elements that are comparable</p>
+</li>
+<li>Very common in Dijkstra's Shortest Path Algorithm and MST (Prim's, Kruskal's)</li>
+<li>FIFO ADT (First-in First Out)</li>
 </ol>
 <h2 id="implementation">Implementation</h2>
 <h3 id="1-binary-heaps">1. Binary Heaps</h3>
 <h3 id="2-balanced-binary-search-tree">2. Balanced Binary Search Tree</h3>
 <h3 id="3-unsorted-list">3. Unsorted List</h3>
-<h3 id="4-sorted-list">4. Sorted List</h3></p>
+<h3 id="4-sorted-list">4. Sorted List</h3>
+<h2 id="complexity-with-binary-heaps">Complexity (with Binary Heaps)</h2>
+<p>Binary Heap construction: O(N)
+Polling: O(log N)
+Peeking: O(1)
+Adding: O(log N)
+Naive removing: O(N)
+Advanced removing (with hash table): O(log N)
+Naive contains: O(N)
+Contains check (with hash table): O(1)</p></p>
     </article>
 </section>
             <!-- endblock -->
