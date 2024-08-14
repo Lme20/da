@@ -6,6 +6,8 @@
 - Items to left of given node = smaller
 - Items to right of given node = larger
 
+height = number of nodes on the longest path from the root to leaf node
+
 ## Operations
 ### INSERT
 1. Start from the root.
@@ -67,23 +69,28 @@ NOTE: same procedure as BST insertion
 ### SEARCH
 
 ## Time complexities
+Rotations: O(1)
+
 Worst-case
 - INSERT: O(log N)
 - SEARCH: O(log N)
 - DELETE: O(log N)
 
 Amortized-case
-- INSERT: O(log N)
-- SEARCH: O(1)
+- SEARCH: O(log N)
+- INSERT: O(1)
 - DELETE: O(1)
 
 Rotations have a time complexity of O(1)
 
 ## Pseudocode
 
-
-# AVL trees
+# AVL trees (self-balancing BST)
 For any one, the height of its two subtrees differs by at most 1. 
+
+- We perform fixes after delete and insert to keep the tree height balance
+- Similar to red-black trees
+- Adheres to the properties of a BST, with the added condition that the height difference between the left and right subtrees of any node is at most 1.
 
 Balance factor = height of left subtree - height of right subtree
 - Valid values of balance factor = {-1, 0, 1}
@@ -94,6 +101,8 @@ Balance factor = height of left subtree - height of right subtree
 ### DELETE
 
 ## Time complexities
+Rotations: O(1)
+
 Worst-case
 - INSERT: O(log N)
 - SEARCH: O(log N)

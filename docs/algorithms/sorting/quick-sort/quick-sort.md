@@ -5,6 +5,7 @@
 - fastest known general-purpose in-memory sorting algorithm in the average case
 - Much more space efficient compared to merge sort
 - Widely used algorithm 
+- lomuto partition scheme is being used for this specific implementation
 
 ## Steps
 1) Select pivot (either in left, right or midpoint)
@@ -47,7 +48,9 @@ Find the pivot by calculating rightmost and leftmost positions and dividing by 2
     - Swap pointers = left pointer is less or equal to right pointer
 
 5. Repeat Steps:
-    - Terminate process when left/right pointer crosses right/left pointer, then, move pivot to crossing position
+    - Terminate process when left/right pointer crosses right/left pointer, then, move pivot to *crossing position*
+
+crossing position: where the left and right pointers have crossed
 
 NOTE: Once the process is done, repeat parition on its subarrays (from left to right). Make sure to select a new pivot and use the old pivot as separator between left and right sublist
 
@@ -72,7 +75,12 @@ NOTE: Once the process is done, repeat parition on its subarrays (from left to r
         return leftwall
 
 ## Time Complexity
-The total cost of the partition operation is constrained by how far right and left can move inwards 
+The total cost of the partition operation is constrained by how far right and left can move inwards.
+
+paritioning: O(n)
+
+Best Case: (O(n \log n))
+    - Occurs when the pivot chosen always divides the array into 2 nearly equal halves, depth of recursion tree is O(log n) at each level, partitioning takes O(n)
 
 worst-case: O(n^2)
 average-case: O(n log n)
