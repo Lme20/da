@@ -8,6 +8,8 @@
 
 height = number of nodes on the longest path from the root to leaf node
 
+BST search, insert, and delete operations typically run in time O(n), where N is the depth of the relevant node in the tree
+
 ## Operations
 ### INSERT
 1. Start from the root.
@@ -34,6 +36,8 @@ Time complexity:
 2. If the node is a leaf node, we can simply remove it.
 3. If the node has one child, replace the node with its child.
 4. If the node has two children, replace the node with its in-order predecessor or in-order successor node and delete that node. You can choose to always replace with the in-order predecessor, always replace with the in-order successor, or alternate between the two.
+
+NOTE: when deleting root node, replace node with its greatest value on its left side
 
 Time complexity:
 - Average Case: O(log n)

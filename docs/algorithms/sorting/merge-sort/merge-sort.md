@@ -17,6 +17,8 @@ Example:
 - Keep splitting until each subarray has one element: [38], [27], [43], [3], [9], [82], [10]
 
 NOTE: the array can be split at the midpoint (left + right) / 2
+
+NOTE: array size is unpar, place extra element (midpoint) in the left subarray.
 **MERGING**
 1. Merge individual elements first, combine them into sorted arrays
 2. Compare smallest elements of each subarray (from one branch to another) and build a new sorted array by taking the smallest element of each (from left to right). 
@@ -29,7 +31,7 @@ Example:
 
 NOTE: 
 
-![Merge Sort](../../../../assets/insertion-sort.png)
+![Merge Sort](../../../../assets/merge-sort.png)
 
 
 
