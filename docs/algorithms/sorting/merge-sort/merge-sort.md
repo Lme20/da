@@ -3,6 +3,8 @@
 - Uses a divide and conquer aproach
 - Stable sort, meaning that elements retain their relative order
 
+
+
 ## Steps
 
 **SPLITTING**
@@ -19,6 +21,7 @@ Example:
 NOTE: the array can be split at the midpoint (left + right) / 2
 
 NOTE: array size is unpar, place extra element (midpoint) in the left subarray.
+
 **MERGING**
 1. Merge individual elements first, combine them into sorted arrays
 2. Compare smallest elements of each subarray (from one branch to another) and build a new sorted array by taking the smallest element of each (from left to right). 
@@ -29,10 +32,8 @@ Example:
 - Merge further: [27, 38] with [43] into [27, 38, 43], [3, 9] with [10, 82] into [3, 9, 10, 82]
 - Final merge: [27, 38, 43] with [3, 9, 10, 82] into [3, 9, 10, 27, 38, 43, 82]
 
-NOTE: 
 
-![Merge Sort](../../../../assets/merge-sort.png)
-
+![Merge Sort](../../../../assets/merge-sort.png) *Figure 1: Merge Sort Process. Note how the midpoint at index 3 is placed on the left subarray*
 
 
 ## Pseudocode

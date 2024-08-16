@@ -22,3 +22,6 @@
 
 *Handle wrap around*
 If the end of the array is reached, continue from the beginning. 
+
+
+## PSEUDOCODE

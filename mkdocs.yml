@@ -29,16 +29,21 @@ nav:
     - Searching:
       - Binary Search: algorithms/searching/binary-search/binary-search.md
     - Shortest Path:
-      - Shortest Path Algorithm: algorithms/shortest-path/shortest-path.md
+      - Dijkstra's: algorithms/shortest-path/dijkstras/dijkstras.md
     - Sorting:
       - Selection Sort: algorithms/sorting/selection-sort/selection-sort.md
       - Insertion Sort: algorithms/sorting/insertion-sort/insertion-sort.md
+      - Merge Sort: algorithms/sorting/merge-sort/merge-sort.md
   - Data Structures:
-    - Graphs: data-structures/graphs/graphs.md
-    - Hash Tables:
+    - Graphs:
+      - Graphs: data-structures/graphs/graphs.md
+    - Hash Tables: 
+      - Hash tables: data-structures/hash-tables/hash-tables.md
       - Hashing: data-structures/hash-tables/hashing.md
       - Linear Probing: data-structures/hash-tables/linear-probing.md
-    - Lists: data-structures/lists/lists.md
+    - Lists:
+      - Queues: data-structures/lists/queues/queues.md
+      - Linked lists: data-structures/lists/linked-lists/linked-lists.md
     - Priority Queues: data-structures/priority-queues/binary-heaps.md
     - Search Trees: data-structures/search-trees/search-trees.md
     - Stacks: data-structures/stacks/stacks.md
