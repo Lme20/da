@@ -14,7 +14,7 @@ Number of swaps amounts to Θ(n) time.
 
 1. Start with the first element of the array.
 2. Search the unsorted portion of the array to find the smallest element.
-3. Swap the smallest element found with the firsy unsorted element.
+3. Swap the smallest element found with the first unsorted element.
 4. Move the boundary between the sorted and unsorted portions one element to the right and repeat steps 2 & 3 until entire array is sorted.
 
 **EXAMPLE:**

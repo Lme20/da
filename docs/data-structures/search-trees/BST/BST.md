@@ -37,7 +37,7 @@ Time complexity:
 3. If the node has one child, replace the node with its child.
 4. If the node has two children, replace the node with its in-order predecessor or in-order successor node and delete that node. You can choose to always replace with the in-order predecessor, always replace with the in-order successor, or alternate between the two.
 
-NOTE: when deleting root node, replace node with its greatest value on its left side
+NOTE: when deleting root node, replace node with its greatest value on its left side or smallest value on its right side
 
 Time complexity:
 - Average Case: O(log n)
@@ -96,7 +96,7 @@ For any one, the height of its two subtrees differs by at most 1.
 - Similar to red-black trees
 - Adheres to the properties of a BST, with the added condition that the height difference between the left and right subtrees of any node is at most 1.
 
-Balance factor = height of left subtree - height of right subtree
+Balance factor = height of right subtree - height of left subtree
 - Valid values of balance factor = {-1, 0, 1}
 ## Operations
 

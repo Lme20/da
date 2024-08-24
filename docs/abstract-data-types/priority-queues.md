@@ -1,5 +1,4 @@
 # Priority Queues
-
 A priority queue is an ADTs. Similar to queues, it operates by:
 
 1. *Adding elements with a priority:* Each element in the priority queue is associated with a priority. The priority can be any comparable value such as an integer or float.
@@ -8,6 +7,12 @@ A priority queue is an ADTs. Similar to queues, it operates by:
 - Only supports elements that are comparable
 - Very common in Dijkstra's Shortest Path Algorithm and MST (Prim's, Kruskal's)
 - FIFO ADT (First-in First Out)
+
+## Operations
+
+### Poll
+
+### Add
 
 ## Implementation
 

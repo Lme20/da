@@ -1,6 +1,6 @@
 # LINEAR PROBING - Probing method for resolving collisions on hash tables
 
-- For to solve collisions in a table (when 2 keys have the same index value)
+- To solve collisions in a table (when 2 keys have the same index value)
 - Mainly for open addressing hash tables
 
 ## STEPS

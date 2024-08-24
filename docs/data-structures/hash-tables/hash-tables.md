@@ -20,7 +20,7 @@ ratio of the number of elements in a hash table (n) to the number of available s
 - Load Factor = n/m.
 - High load factor: increased likelyhood of collision
 - Low load factor: low chances of collision
-- Used to determine if a table needs to be resized.
+- Used to determine if a table needs to be resized
 
 
 **RESIZING A TABLE**

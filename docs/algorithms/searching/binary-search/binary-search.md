@@ -15,7 +15,7 @@ Step 1:
 - Start with the entire sorted sequence.
 
 Step 2:
-- Calculate the middle index of the current search space to place the pivot. (not the elemenet value!)
+- Calculate the middle index of the current search space to place the pivot. (not the element value!)
 pivot = (left + right) / 2
 
 Step 3:

@@ -12,7 +12,7 @@
 
 2. Begin with the first element in the unsorted partition (index 1)
 
-3. Compare current element with sorted partition from *right* to *left*.
+3. Compare current element with elements of sorted partition from *right* to *left*.
 
 4. Insert the current element into its correct position in the sorted partition.
 
